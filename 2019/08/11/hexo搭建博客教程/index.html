@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  
+  <title>hexo搭建博客教程 - BurnIn</title>
+  <link rel="icon" href="https://i.imgur.com/SrZt9VU.jpg" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  
+  <meta name="keywords" content>
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+</html>
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="/" class="logo">BurnIn</a>
+    <div class="subtitle"></div>
+  </div>
+  <nav class="navbar">
+    <ul class="menu">
+      
+        <li class="menu-item">
+          <a href="/archives" class="menu-item-link">Home</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="/tags/MachineLearning" class="menu-item-link">MachineLearning</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="/about" class="menu-item-link">About</a>
+        </li>
+      
+    </ul>
+  </nav>
+</header>
+
+<article class="post">
+  <div class="post-title">
+    <h1 class="article-title">hexo搭建博客教程</h1>
+  </div>
+
+  <!-- 文章目录 -->
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#初步环境安装及介绍"><span class="toc-text">初步环境安装及介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写作环境"><span class="toc-text">写作环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用markdown语法"><span class="toc-text">常用markdown语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reference"><span class="toc-text">reference</span></a></li></ol>
+
+  <div class="post-content">
+    <h3 id="初步环境安装及介绍"><a href="#初步环境安装及介绍" class="headerlink" title="初步环境安装及介绍"></a>初步环境安装及介绍</h3><ul>
+<li>Node.js</li>
+<li>git</li>
+<li>github 创建一个repo， 命名为 username.github.io</li>
+</ul>
+<p>Node.js安装好后，创建一个名为<code>blog</code>的文件夹， 然后<code>cd blog</code>， 运行<code>hexo init</code>初始化此目录。 运行<code>hexo g</code>生成博客。<br>然后运行<code>hexo s</code>启动 hexo 服务器， 然后在浏览器中输入博客地址， <code>loalhost:4000</code>即可看到博客了。</p>
+<p>hexo 本质上就是一个markdown解释引擎， 将md文件翻译为静态html文件。<br>使用的基本流程如下：</p>
+<ul>
+<li>编写博客</li>
+<li>生成html网页</li>
+<li>本地预览</li>
+<li>上传部署到github</li>
+</ul>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p>可能还需要安装其他依赖部件：</p>
+<ul>
+<li>npm install hexo-server –save<ul>
+<li>安装hexo服务器， 用于本地预览</li>
+</ul>
+</li>
+<li>npm install hexo-deployer-git –save<ul>
+<li>安装部署模块， 用于上传到github</li>
+</ul>
+</li>
+<li>npm install hexo-math –save<ul>
+<li>渲染公式</li>
+</ul>
+</li>
+</ul>
+<p>常用命令：</p>
+<ul>
+<li>hexo init</li>
+<li>hexo new [layout] file</li>
+<li>hexo g == hexo generate #生成<ul>
+<li>hexo g –watch  # 不但监控文件变动， 一旦有变动， 就更新html文件</li>
+<li>hexo g –deploy # 生成html文件后， 立马上传到github</li>
+<li>hexo g -d == hexo g –deploy</li>
+</ul>
+</li>
+<li>hexo s == hexo server   #启动服务预览<ul>
+<li>hexo server           #Hexo会监视文件变动并自动更新，无须重启服务器</li>
+<li>hexo server -s        #静态模式</li>
+<li>hexo server -p 5000   #更改端口</li>
+<li>hexo server -i 192.168.1.1 #自定义 IP</li>
+</ul>
+</li>
+<li>hexo d == hexo deploy   #部署</li>
+<li>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</li>
+<li>hexo publish [layout] file<ul>
+<li>草稿箱中的文件移入到source/_posts目录</li>
+</ul>
+</li>
+</ul>
+<p>基本流程就这么东西， 剩下的就是按照hexo的规则编写文章了。</p>
+<h3 id="写作环境"><a href="#写作环境" class="headerlink" title="写作环境"></a>写作环境</h3><p>hexo常见目录与文件介绍</p>
+<ul>
+<li>node_modules</li>
+<li>themes， 主题<ul>
+<li>_config.yml</li>
+</ul>
+</li>
+<li>public<ul>
+<li>部署到github上的目录，其他目录不会被上传到github上</li>
+</ul>
+</li>
+<li>package.json<ul>
+<li>依赖部件， 可以自由移除</li>
+</ul>
+</li>
+<li>scaffolds<ul>
+<li>模板文件</li>
+</ul>
+</li>
+<li>source<ul>
+<li>资源目录， 比如可以放图片等等</li>
+</ul>
+</li>
+<li>_config.yml<ul>
+<li>配置文件</li>
+</ul>
+</li>
+<li>其他都是可以忽略的</li>
+</ul>
+<p>一般而言， 只需要配置_config.yml/scaffolds/source即可。<br>下面只提及一些重要配置。</p>
+<p><strong>_config.yml</strong></p>
+<ul>
+<li>default_layout: draft<ul>
+<li>默认生成的博客md文件想入草稿箱</li>
+</ul>
+</li>
+<li>new_post_name: :year/:month/:day/:title.md</li>
+<li>permalink: :year/:month/:day/:title/<ul>
+<li>hexo new file</li>
+<li>hexo publish file</li>
+</ul>
+</li>
+</ul>
+<p><strong>scaffolds</strong><br>不同模板文件。 生成md文件时，会预置一些内容在里面，主要用在<code>hexo new [layout] file</code>中。如果省略layout选项， 则使用_config.yml中的default_layout。一般而言， default_layout的值是_draft。编写一般的博客， 使用<code>hexo new file</code>，编写好后，<code>hexo publish file</code>移入source/_posts目录</p>
+<p><strong>source</strong><br>存放各种博客文件。 主要包括</p>
+<ul>
+<li>_drafts， 通过 <code>hexo new draft blogname</code>生成<ul>
+<li>draft.md</li>
+</ul>
+</li>
+<li>_posts， 通过 <code>hexo new post blogname</code>生成<ul>
+<li>date/blog.md</li>
+</ul>
+</li>
+<li>其他博客， 通过 <code>hexo new page blogname</code>生成<ul>
+<li>blogname/index.md</li>
+<li>这种形式， 主要用于 博客的 about之类的选项中。</li>
+</ul>
+</li>
+</ul>
+<p>配置以后， 博客的撰写流程一般如下：</p>
+<ul>
+<li><code>hexo new filename</code>， 在source/_draft目录下生成博客md文件</li>
+<li>编写好后， 使用<code>hexo s --draft</code>预览草稿。</li>
+<li>确定不在更改以后， <code>hexo publish filename</code><ul>
+<li>会将博客md文件 移动到 source/_post/date 目录下</li>
+</ul>
+</li>
+<li><code>hexo g</code>， 生成html文件</li>
+<li><code>hexo d</code>， 部署到github</li>
+</ul>
+<p>其他功能</p>
+<ul>
+<li>增加类别， 类似于 “machinelearning”， 可以在themes/theme-name/_config.yml 中的menu中添加”machinelearning: /tags/machinelearning”<ul>
+<li>然后为 与 machinelearing 相关的博客 打上 machinelearning 的tag</li>
+</ul>
+</li>
+<li>增加About， <code>hexo new page about</code>， 然后在可以在themes/theme-name/_config.yml 中的menu中添加”About: /about”<ul>
+<li>上面旨在说明两种功能的区别， 一个是博客列表， 一个是博客md文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="常用markdown语法"><a href="#常用markdown语法" class="headerlink" title="常用markdown语法"></a>常用markdown语法</h3><h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
+<li><a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/writing</a></li>
+</ul>
+
+  </div>
+  <div class="post-meta">
+    <span class="post-time" style="color:#646060;font-size:13px">2019-08-11</span>
+  </div>
+
+  <div class="post-footer">
+    
+
+    <a href="#top" class="top">Back to Top</a>
+  </div>
+</article>
+
+<!-- 评论插件 -->
+
+<footer>
+  2019
+  <span class="author">
+    Erwin Smith
+  </span>
+</footer>
+
+
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </body>
+</html>
